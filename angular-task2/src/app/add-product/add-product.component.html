@@ -1,0 +1,58 @@
+<form class="p-4 border rounded bg-light shadow-sm">
+  <div class="mb-3 row">
+    <label for="productName" class="col-sm-3 col-form-label"
+      >Product Name</label
+    >
+    <div class="col-sm-9">
+      <input
+        type="text"
+        class="form-control"
+        id="productName"
+        placeholder="Enter product name"
+        [(ngModel)]="product.name"
+        name="productName"
+      />
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="productDesc" class="col-sm-3 col-form-label"
+      >Product Description</label
+    >
+    <div class="col-sm-9">
+      <textarea
+        class="form-control"
+        id="productDesc"
+        rows="3"
+        placeholder="Enter product description"
+        [(ngModel)]="product.description"
+        name="productDescription"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="productPrice" class="col-sm-3 col-form-label"
+      >Product Price</label
+    >
+    <div class="col-sm-9">
+      <div class="input-group">
+        <span class="input-group-text">$</span>
+        <input
+          type="number"
+          class="form-control"
+          id="productPrice"
+          placeholder="Enter price"
+          [(ngModel)]="product.price"
+          name="productPrice"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="text-end">
+    <button type="submit" class="btn btn-primary" (click)="onAddProduct()">
+      Add Product
+    </button>
+  </div>
+</form>

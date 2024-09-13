@@ -1,0 +1,50 @@
+<div
+  class="container d-flex flex-column align-items-center justify-content-center task-container"
+>
+  <div
+    class="task1-section d-flex flex-column align-items-center justify-content-center"
+  >
+    <h5 class="mb-3">This is Task 1</h5>
+    <input
+      type="text"
+      class="form-control mb-3"
+      placeholder="Enter username"
+      [(ngModel)]="username"
+    />
+    <p class="label">
+      Username is:
+      <span class="value">{{ username }}</span>
+    </p>
+    <button class="btn" [disabled]="!username" (click)="resetUserName()">
+      Reset
+    </button>
+  </div>
+
+  <hr class="outer-seperator" />
+
+  <div
+    class="task2-section d-flex flex-column align-items-center justify-content-center"
+  >
+    <h5 class="mb-3">This is Task 2</h5>
+    <button class="btn mb-3" (click)="toggleDetails()">
+      {{ isDisplayed ? "Hide Details" : "Display Details" }}
+    </button>
+    @if (isDisplayed) {
+    <p class="label">
+      Password is:
+      <span class="value">myPasswod$$!!&#64;&#64;</span>
+    </p>
+    }
+    <hr class="inner-seperator" />
+    @for (clickLog of btnClickLogs; track $index; ; let idx = $index) {
+    <p
+      class="label"
+      [ngStyle]="idx >= 4 ? logBgColor : {}"
+      [ngClass]="{ 'label-5': idx >= 4 }"
+    >
+      Click {{ idx + 1 }} clicked at :
+      <span class="value">{{ clickLog }}</span>
+    </p>
+    }    
+  </div>
+</div>

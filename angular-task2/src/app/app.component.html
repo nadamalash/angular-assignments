@@ -1,0 +1,31 @@
+<section class="container mt-5 mb-5">
+  <div class="row mb-4">
+    <div class="col-12">
+      <h2 class="text-center fw-bold">Our Products</h2>
+      <p class="text-center text-muted">Explore our latest offerings</p>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-5">
+    @for (product of products; track $index) {
+    <div class="col-md-4">
+      <app-product [product]="product"></app-product>
+    </div>
+    }
+  </div>
+</section>
+
+<hr class="my-5" />
+
+<section class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center fw-bold">Add Product</h2>
+      <p class="text-center text-muted">
+        Fill out the form to add a new product
+      </p>
+    </div>
+  </div>
+
+  <app-add-product (productAdded)="onAddProduct($event)"></app-add-product>
+</section>
