@@ -1,0 +1,11 @@
+<div class="text-center my-3">
+  <img [src]="store.logo" alt="Store Logo" class="store-logo">
+  <h2 class="store-name">{{store.name}}</h2>
+</div>
+
+<div class="branches my-4">
+  <h3>Our Branches</h3>
+  <ul class="list-group">
+    <li class="list-group-item text-dark" *ngFor="let branch of store.branches">{{ branch }}</li>
+  </ul>
+</div>
